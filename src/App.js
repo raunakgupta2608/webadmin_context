@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Store from './Store';
 import Routing from './components/Routing';
@@ -5,9 +6,11 @@ import Routing from './components/Routing';
 function App() {
 
   return (
-    <Store>
-      <Routing/>
-    </Store>
+    <BrowserRouter>
+      <Store>
+        <Routing/>
+      </Store>
+    </BrowserRouter>
   );
 }
 

@@ -34,12 +34,14 @@ const Login = () => {
   }
 
   const formData = (e) => { 
-    toast("ajsdnj");   
-      if(username!== "" && password!=="") {
-          setLogin({username:"", password:""});
-          setToken({token: username});
-        //   history.push('/home');
-      }
+    if(username!== "" && password!=="") { 
+      toast.success("Login Successfull!!");
+      setTimeout(() => {
+        setLogin({username:"", password:""});
+        setToken({token: username});
+        history.push('/cool');
+      }, 1000);  
+    }
   }
 
   return (

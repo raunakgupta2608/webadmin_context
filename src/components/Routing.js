@@ -1,24 +1,26 @@
-import React, { useContext } from 'react';
-import { Context } from '../Store';
-import CoolComponent from './CoolComponent';
-import Login from './Login';
+import React from 'react';
+import NavbarComponent from './NavbarComponent';
+import SwitchCompute from './SwitchCompute';
 
 const Routing = () => {
-    const [token, setToken] =  useContext(Context);
+    
     return (  
     <>
-    {
-        token.token !== "none" ?
-        <>
-            <CoolComponent/>
-        </>
-        :
-        <>
-            <Login/>
-        </>
-    }
+        <NavbarComponent/>
+        <SwitchCompute />
     </>
     );
 }
  
 export default Routing;
+
+// {        
+//     token.token !== "none" ?
+//     <>
+//         <CoolComponent/>
+//     </>
+//     :
+//     <>
+//         <SwitchCompute/>
+//     </>
+// }
