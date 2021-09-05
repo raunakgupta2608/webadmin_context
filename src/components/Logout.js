@@ -34,7 +34,7 @@ const Logout = (props) => {
             Are you sure you want to Logout?
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={logoutImpl}>Yes</Button>
+          <Button color="success" onClick={logoutImpl}>Yes</Button>
           <Button color="secondary" onClick={toggleModal}>Cancel</Button>
         </ModalFooter>
       </Modal>

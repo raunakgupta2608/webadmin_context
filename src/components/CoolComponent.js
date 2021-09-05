@@ -5,6 +5,9 @@ import ListOfGroups from './ListOfGroups';
 import groupArrays  from '../Arrays';
 import Intro from './Jumbotron';
 import { Route, Switch, useRouteMatch, NavLink } from 'react-router-dom';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import ListIcon from '@material-ui/icons/List';
+import SearchIcon from '@material-ui/icons/Search';
 
 const CoolComponent = (props) => {
 
@@ -35,21 +38,21 @@ const CoolComponent = (props) => {
           <Col md={4}>
             <NavLink to={`${url}/creategroup`} style={linkStyle}>
               <div className="btn btn-success">
-                Create Group
+                Create Group <AddBoxIcon />
               </div>
             </NavLink>
           </Col>
           <Col md={4}>         
             <NavLink to={`${url}/listofgroup`} style={linkStyle}>
               <div className="btn btn-success">
-                List of Group
+                List of Group <ListIcon />
               </div>
             </NavLink>
           </Col>
           <Col md={4}>
             <NavLink to={`${url}/findgroup`} style={linkStyle}>
               <div className="btn btn-success">
-                Find Group
+                Find Group <SearchIcon />
               </div>
             </NavLink>
           </Col>

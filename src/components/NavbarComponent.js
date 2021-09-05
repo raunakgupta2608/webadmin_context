@@ -3,6 +3,8 @@ import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { Context } from '../Store';
 import Logout from './Logout';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const NavbarComponent = () => {
 
@@ -31,7 +33,9 @@ const NavbarComponent = () => {
               (token.token ==="none") ? 
               <>
                 <NavItem>
-                  <NavLink to="/login" className="nav-link" activeClassName="active">Login</NavLink>
+                  <NavLink to="/login" className="nav-link" activeClassName="active">
+                    Login <VpnKeyIcon/>
+                  </NavLink>
                 </NavItem> 
                 <NavItem>
                   <NavLink to="/signup" className="nav-link" activeClassName="active">Sign Up</NavLink>
@@ -43,7 +47,7 @@ const NavbarComponent = () => {
                   <NavLink to="" className="nav-link" 
                     activeClassName="active"
                     onClick={() => toggleModal()}>
-                    Logout
+                    Logout <ExitToAppIcon />
                   </NavLink>
                 </NavItem>
               </>
