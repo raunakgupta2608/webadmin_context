@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-    Card, CardBody,
-    CardTitle, Button, Form, FormGroup, Label, Input, FormText, CardText
-  } from 'reactstrap';
+import { Card, CardBody, CardTitle, Button, Form, FormGroup, Label, Input, FormText, CardText } from 'reactstrap';
+import { useHistory } from 'react-router';
+import { Context } from '../Store';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = (props) => {
     const style = { 
@@ -15,8 +17,10 @@ const Signup = (props) => {
         height: '50%'
     };
 
+    const [token, setToken] =  useContext(Context);
     const [signUp, setSignUp] = useState({username:"", password:"", repassword:""});
     const [disable, setDisable] = useState(false);
+    const history = useHistory();
   
     const { username, password, repassword } = signUp;
 
@@ -31,12 +35,19 @@ const Signup = (props) => {
     }
 
     const formData = (e) => {
-        // setDisable(!disable);
-        console.log(signUp);
+        if(username!== "" && password!=="" && repassword!=="") { 
+          toast.success("Sign Up Successfull!!");
+          setTimeout(() => {
+            setSignUp({username:"", password:"", repassword:""});
+            setToken({token: username});
+            history.push('/cool/intro');
+          }, 1000);  
+        }
     }
 
     return (
         <>
+        <ToastContainer></ToastContainer>
         <Card body inverse className="card" style={style}>
             <CardBody>
               <CardTitle style={{fontSize: "2rem"}}>Create an Account!!</CardTitle>

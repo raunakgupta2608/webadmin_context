@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useRouteMatch } from 'react-router-dom';
 import { useHistory } from 'react-router';
 
 import { Context } from '../Store';
@@ -8,11 +8,15 @@ import { Context } from '../Store';
 const Logout = (props) => {
     const {modal, handleModal} = props;
     const [token, setToken] =  useContext(Context);
+    const { path, url } = useRouteMatch();
 
     const history = useHistory();
+
   
     const toggleModal = () => {
-      history.push('/cool');
+      console.log("Path ", path);
+      console.log("Url ", url);
+      history.push('/cool/intro');
       handleModal(!modal);
     }
 

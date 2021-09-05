@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Context } from '../Store';
 import Logout from './Logout';
 
@@ -21,9 +21,9 @@ const NavbarComponent = () => {
   return (
     <>
       <Navbar color="dark" dark expand="md">
-        <Navbar className="navbar-brand" style={{margin: "0 0 0 25px"}}>
+        <NavLink to={ token.token === "none" ? "login" : "/cool/intro"} className="navbar-brand" style={{margin: "0 0 0 25px"}}>
           Website Administrator
-        </Navbar>
+        </NavLink>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>

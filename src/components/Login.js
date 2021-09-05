@@ -39,37 +39,36 @@ const Login = () => {
       setTimeout(() => {
         setLogin({username:"", password:""});
         setToken({token: username});
-        history.push('/cool');
+        history.push('/cool/intro');
       }, 1000);  
     }
   }
 
   return (
     <div>
-        {/* <div> */}
-        <ToastContainer></ToastContainer>
-        <Card body inverse style={style} >
-            <CardBody>
-                <CardTitle  style={{fontSize: "2rem"}}>Please Enter your Login Details</CardTitle>
-                <Form>
-                    <FormGroup>
-                        <Label for="username">Username</Label>
-                        <Input type="text" value={username} id="username" placeholder="Please enter your Email"
-                        onChange={updateField}
-                        />
-                        <FormText id="usernameError" className="alert-warning"></FormText>
-                    </FormGroup>
-                    <FormGroup style={{margin:"3% 0%"}}>
-                        <Label for="password">Password</Label>
-                        <Input type="password" value={password} id="password" placeholder="Please enter your Password"
-                        onChange={updateField} onKeyPress={e => Enter(e)}
-                        />
-                        <FormText id="passwordError" className="alert-warning"></FormText>
-                    </FormGroup>
-                </Form>
-                <Button type="submit" id="submitBtn" disabled={disable} style={{margin: "3% 0%"}} onClick={formData}>Submit</Button>
-            </CardBody>
-        </Card>
+      <ToastContainer></ToastContainer>
+      <Card body inverse style={style} >
+          <CardBody>
+              <CardTitle  style={{fontSize: "2rem"}}>Please Enter your Login Details</CardTitle>
+              <Form>
+                  <FormGroup>
+                      <Label for="username">Username</Label>
+                      <Input type="text" value={username} id="username" placeholder="Please enter your Email"
+                      onChange={updateField}
+                      />
+                      <FormText id="usernameError" className="alert-warning"></FormText>
+                  </FormGroup>
+                  <FormGroup style={{margin:"3% 0%"}}>
+                      <Label for="password">Password</Label>
+                      <Input type="password" value={password} id="password" placeholder="Please enter your Password"
+                      onChange={updateField} onKeyPress={e => Enter(e)}
+                      />
+                      <FormText id="passwordError" className="alert-warning"></FormText>
+                  </FormGroup>
+              </Form>
+              <Button type="submit" id="submitBtn" disabled={disable} style={{margin: "3% 0%"}} onClick={formData}>Submit</Button>
+          </CardBody>
+      </Card>
     </div>
   );
 };

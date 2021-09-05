@@ -6,7 +6,7 @@ import Routing from './components/Routing';
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="webadmin">
       <Store>
         <Routing/>
       </Store>
